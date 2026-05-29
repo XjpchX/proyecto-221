@@ -1,0 +1,18 @@
+<section class="panel-card">
+  <div class="section-heading">
+    <p>Panel de Control</p>
+    <h2>Gestiona tus dispositivos</h2>
+    <span>Los cambios se guardan en Firebase y se sincronizan en tiempo real.</span>
+  </div>
+
+  @if (estado$ | async; as estado) {
+    <div class="device-grid">
+      <app-luz-control [encendida]="estado.luz" />
+      <app-alarma-control [activada]="estado.alarma" />
+      <app-puerta-control [estado]="estado.puerta" />
+      <app-aire-control [temperatura]="estado.aire.temperatura" />
+    </div>
+  } @else {
+    <p class="loading">Conectando con Firebase...</p>
+  }
+</section>

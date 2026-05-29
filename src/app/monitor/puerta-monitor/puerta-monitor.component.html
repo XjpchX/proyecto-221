@@ -1,0 +1,6 @@
+<article class="monitor-card" [class.online]="estado === 'abierta'">
+  <span class="monitor-icon">🚪</span>
+  <p>Estado de la Puerta</p>
+  <h3>{{ estado === 'abierta' ? 'Abierta' : 'Cerrada' }}</h3>
+  <small>Lectura en tiempo real</small>
+</article>

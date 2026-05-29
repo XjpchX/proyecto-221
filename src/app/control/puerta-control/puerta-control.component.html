@@ -1,0 +1,10 @@
+<article class="device-card" [class.active]="estado === 'abierta'">
+  <div class="device-icon">🚪</div>
+  <div>
+    <p class="device-label">Puerta</p>
+    <h3>{{ estado === 'abierta' ? 'Abierta' : 'Cerrada' }}</h3>
+  </div>
+  <button type="button" class="primary-action" (click)="alternarPuerta()">
+    {{ estado === 'abierta' ? 'Cerrar puerta' : 'Abrir puerta' }}
+  </button>
+</article>

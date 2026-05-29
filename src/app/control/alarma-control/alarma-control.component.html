@@ -1,0 +1,10 @@
+<article class="device-card danger" [class.active]="activada">
+  <div class="device-icon">🚨</div>
+  <div>
+    <p class="device-label">Alarma</p>
+    <h3>{{ activada ? 'Activada' : 'Desactivada' }}</h3>
+  </div>
+  <button type="button" class="primary-action" (click)="alternarAlarma()">
+    {{ activada ? 'Desactivar alarma' : 'Activar alarma' }}
+  </button>
+</article>

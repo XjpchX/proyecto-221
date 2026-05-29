@@ -1,0 +1,10 @@
+<article class="device-card" [class.active]="encendida">
+  <div class="device-icon">💡</div>
+  <div>
+    <p class="device-label">Luz</p>
+    <h3>{{ encendida ? 'Encendida' : 'Apagada' }}</h3>
+  </div>
+  <button type="button" class="primary-action" (click)="alternarLuz()">
+    {{ encendida ? 'Apagar luz' : 'Prender luz' }}
+  </button>
+</article>

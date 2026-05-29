@@ -1,0 +1,28 @@
+<header class="hero">
+  <nav class="topbar" aria-label="Navegación principal">
+    <a routerLink="/control" routerLinkActive="active" class="nav-link">🎮 Control</a>
+    <a routerLink="/monitoreo" routerLinkActive="active" class="nav-link">📊 Monitoreo</a>
+  </nav>
+
+  <section class="hero-content">
+    <p class="eyebrow">Angular + Firebase Realtime Database</p>
+    <h1>Proyecto Domótica</h1>
+    <p>
+      Controla y monitorea luz, alarma, puerta y aire acondicionado con
+      sincronización instantánea en Firebase.
+    </p>
+  </section>
+
+  @if (estado$ | async; as estado) {
+    <section class="status-strip" aria-label="Resumen de estados actuales">
+      <span>💡 {{ estado.luz ? 'Encendida' : 'Apagada' }}</span>
+      <span>🚨 {{ estado.alarma ? 'Activada' : 'Desactivada' }}</span>
+      <span>🚪 {{ estado.puerta === 'abierta' ? 'Abierta' : 'Cerrada' }}</span>
+      <span>❄️ {{ estado.aire.temperatura }} °C</span>
+    </section>
+  }
+</header>
+
+<main class="page-shell">
+  <router-outlet />
+</main>
