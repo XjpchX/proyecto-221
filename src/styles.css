@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2e8f0;
+  color: #0f172a;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.device-card,
+.monitor-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  min-height: 230px;
+  padding: 1.35rem;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.device-card:hover,
+.monitor-card:hover {
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.device-card.active,
+.monitor-card.online {
+  border-color: #7dd3fc;
+  background: linear-gradient(145deg, #ecfeff, #eff6ff);
+}
+
+.device-card.danger.active,
+.monitor-card.danger.online {
+  border-color: #fda4af;
+  background: linear-gradient(145deg, #fff1f2, #fff7ed);
+}
+
+.device-card.climate {
+  border-color: #bfdbfe;
+}
+
+.device-icon,
+.monitor-icon {
+  align-items: center;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: inset 0 0 0 1px #e2e8f0;
+  display: inline-flex;
+  font-size: 2.1rem;
+  height: 4rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 4rem;
+}
+
+.device-label,
+.monitor-card p {
+  color: #64748b;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.device-card h3,
+.monitor-card h3 {
+  color: #0f172a;
+  font-size: 1.8rem;
+  margin: 0 0 1.35rem;
+}
+
+.primary-action,
+.round-action {
+  border: 0;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.primary-action {
+  background: linear-gradient(135deg, #4f46e5, #0891b2);
+  border-radius: 999px;
+  color: #fff;
+  padding: 0.85rem 1.1rem;
+  width: 100%;
+}
+
+.primary-action:hover,
+.round-action:hover {
+  filter: brightness(1.05);
+}
+
+.temperature-controls {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.temperature-controls span {
+  color: #2563eb;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.round-action {
+  background: #1d4ed8;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.4rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.monitor-card {
+  text-align: center;
+}
+
+.monitor-card small {
+  color: #64748b;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    justify-content: stretch;
+  }
+
+  .nav-link {
+    flex: 1;
+    text-align: center;
+  }
+}

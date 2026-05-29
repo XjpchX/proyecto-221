@@ -1,0 +1,18 @@
+<section class="panel-card readonly">
+  <div class="section-heading">
+    <p>Panel de Monitoreo</p>
+    <h2>Consulta el estado en vivo</h2>
+    <span>Vista solo lectura conectada a Firebase Realtime Database.</span>
+  </div>
+
+  @if (estado$ | async; as estado) {
+    <div class="device-grid">
+      <app-luz-monitor [encendida]="estado.luz" />
+      <app-aire-monitor [temperatura]="estado.aire.temperatura" />
+      <app-puerta-monitor [estado]="estado.puerta" />
+      <app-alarma-monitor [activada]="estado.alarma" />
+    </div>
+  } @else {
+    <p class="loading">Leyendo estados desde Firebase...</p>
+  }
+</section>
